@@ -149,7 +149,7 @@ isTrajet(): boolean</panel_attributes>
       <h>110</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-m1=0..*
+m1=0..1
 m2=1..2
 ajouter &gt;</panel_attributes>
     <additional_attributes>170.0;90.0;170.0;40.0;10.0;40.0;10.0;10.0</additional_attributes>
@@ -164,7 +164,7 @@ ajouter &gt;</panel_attributes>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..*
-m2=0..1
+m2=1
 &lt; a</panel_attributes>
     <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
   </element>
@@ -178,7 +178,7 @@ m2=0..1
     </coordinates>
     <panel_attributes>lt=-
 m1=1
-m2=0..1
+m2=0..*
 voiture utilisée &gt;
 </panel_attributes>
     <additional_attributes>10.0;550.0;10.0;610.0;870.0;620.0;870.0;10.0;560.0;10.0</additional_attributes>
@@ -192,8 +192,8 @@ voiture utilisée &gt;
       <h>110</h>
     </coordinates>
     <panel_attributes>lt=-
-m1=0..n
-m2=2..4
+m1=0..3
+m2=0..*
 est inscrit ^</panel_attributes>
     <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
@@ -225,9 +225,8 @@ Dimanche</panel_attributes>
       <w>90</w>
       <h>150</h>
     </coordinates>
-    <panel_attributes>lt=-
-m1=0..n
-m2=0..1
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0..3
 ajouter &gt;</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
   </element>
