@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>8</zoom_level>
+  <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>760</y>
-      <w>192</w>
-      <h>120</h>
+      <x>450</x>
+      <y>780</y>
+      <w>240</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>Compte
 --
 -id: long
 --
-+getters()
-+setters(): void
++ctor/setters/getters
 +toString(): String
 +estConnecte(): boolean
 +peutProposerCovoiturage(): boolean</panel_attributes>
@@ -23,69 +22,65 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>176</x>
-      <y>136</y>
-      <w>136</w>
-      <h>72</h>
+      <x>70</x>
+      <y>0</y>
+      <w>170</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>Retour
 --
 
 --
-+lieuDepart(AFPA): String
-+lieuArrive(adress): String</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>504</x>
-      <y>136</y>
-      <w>160</w>
-      <h>72</h>
-    </coordinates>
-    <panel_attributes>Aller
---
-
---
-+lieuDepart(adress): String
-+lieuArrive(AFPA): String</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>192</x>
-      <y>768</y>
-      <w>136</w>
-      <h>96</h>
-    </coordinates>
-    <panel_attributes>Voiture
---
--id: long
---
-+placeBagage(): boolean
-+getters()
-+setters(): void
-+toString(): String
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>456</x>
-      <y>528</y>
-      <w>360</w>
-      <h>120</h>
+      <x>480</x>
+      <y>0</y>
+      <w>200</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Aller
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>90</x>
+      <y>790</y>
+      <w>170</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Voiture
+--
+-id: long
+--
++ctor/setters/getters
++peutFumer(): boolean
++placeBagage(): boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>490</y>
+      <w>470</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>Inscription
 --
 -id: long
+-joursConcernes: List&lt;Jours&gt;
 --
-+Inscription(joursConcerne: Jours[], transport: Transport,
-utilisateur1: Compte, utilisateur2: Compte, voiture: Voiture, peutFumer(): boolean, 
-tragetRegulier(): boolean)
++Inscription(joursConcerne: Jours[],utilisateur1: Compte, deplacement: Deplacement)
 +getters()
 +setters(): void
 +toString(): String</panel_attributes>
@@ -94,53 +89,54 @@ tragetRegulier(): boolean)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>472</x>
-      <y>296</y>
-      <w>216</w>
-      <h>136</h>
+      <x>440</x>
+      <y>200</y>
+      <w>270</w>
+      <h>170</h>
     </coordinates>
-    <panel_attributes>Voyage
+    <panel_attributes>Deplacement
 --
-
+-retour: Retour
+-aller: Aller
 --
-+getters()
-+setters(): void
-+toString(): String
-+Voyage(retour: Retour)
-+Voyage(aller: Aller)
-+Voyage(retour: Retour, aller: Aller)
++Deplacement(retour: Retour)
++Deplacement(aller: Aller)
++Deplacement(retour: Retour, aller: Aller)
++setters/getters
 +isTrajet(): boolean
++isRetour(): boolean
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>344</x>
-      <y>136</y>
-      <w>120</w>
-      <h>152</h>
+      <x>280</x>
+      <y>0</y>
+      <w>170</w>
+      <h>190</h>
     </coordinates>
     <panel_attributes>Chemin
 --
 -AFPA: final String
 -heurDepart: DateTime
 -heurArriver: DateTime
+-adress
 --
-+getters()
-+setters(): void
++ctor/setters/getters
 +toString(): String
 +getAFPA(): String
++tragetRegulier(): boolean
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>304</x>
-      <y>144</y>
-      <w>56</w>
-      <h>24</h>
+      <x>230</x>
+      <y>10</y>
+      <w>70</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
@@ -148,35 +144,35 @@ tragetRegulier(): boolean)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>456</x>
-      <y>144</y>
-      <w>64</w>
-      <h>24</h>
+      <x>440</x>
+      <y>10</y>
+      <w>60</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;</panel_attributes>
-    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>456</x>
-      <y>240</y>
-      <w>136</w>
-      <h>72</h>
+      <x>440</x>
+      <y>130</y>
+      <w>150</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=0..1
 m2=1..2
 ajouter &gt;</panel_attributes>
-    <additional_attributes>130.0;70.0;130.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>110.0;70.0;110.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>320</x>
-      <y>792</y>
-      <w>176</w>
-      <h>40</h>
+      <x>250</x>
+      <y>820</y>
+      <w>220</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..*
@@ -187,25 +183,25 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>312</y>
-      <w>792</w>
-      <h>616</h>
+      <x>150</x>
+      <y>220</y>
+      <w>990</w>
+      <h>770</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=0..*
-voiture utilisée &gt;
+voiture utilisée v
 </panel_attributes>
-    <additional_attributes>10.0;690.0;10.0;750.0;870.0;750.0;870.0;10.0;560.0;10.0</additional_attributes>
+    <additional_attributes>10.0;680.0;10.0;750.0;870.0;750.0;870.0;10.0;560.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>520</x>
-      <y>640</y>
-      <w>80</w>
-      <h>136</h>
+      <x>500</x>
+      <y>630</y>
+      <w>100</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..3
@@ -216,10 +212,10 @@ est inscrit ^</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>320</x>
-      <y>520</y>
-      <w>80</w>
-      <h>128</h>
+      <x>250</x>
+      <y>480</y>
+      <w>100</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enumeration&gt;&gt;
 Jours
@@ -236,10 +232,10 @@ Dimanche</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>528</x>
-      <y>424</y>
-      <w>72</w>
-      <h>120</h>
+      <x>510</x>
+      <y>360</y>
+      <w>90</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m2=0..3
@@ -249,24 +245,24 @@ ajouter &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>664</x>
-      <y>336</y>
-      <w>280</w>
-      <h>472</h>
+      <x>680</x>
+      <y>250</y>
+      <w>350</w>
+      <h>590</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=0..*
-créer &gt;</panel_attributes>
+créer ^</panel_attributes>
     <additional_attributes>10.0;560.0;280.0;560.0;280.0;10.0;30.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>392</x>
-      <y>528</y>
-      <w>72</w>
-      <h>24</h>
+      <x>340</x>
+      <y>490</y>
+      <w>90</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=(+)-</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
